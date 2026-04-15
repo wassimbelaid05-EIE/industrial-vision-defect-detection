@@ -356,7 +356,7 @@ class PartGenerator:
                 r = size + random.randint(-size//3, size//3)
                 pts.append([x + int(r * np.cos(angle)), y + int(r * np.sin(angle))])
             pts = np.array(pts, np.int32)
-            cv2.fillPoly(img, [pts], (gray[y, x] // 2, gray[y, x] // 2, gray[y, x] // 2))
+            cv2.fillPoly(img, [pts], (int(int(gray[y, x])) // 2, int(int(gray[y, x])) // 2, int(int(gray[y, x])) // 2))
 
         elif defect_type == DefectType.INCLUSION:
             # Dark foreign material inclusion
